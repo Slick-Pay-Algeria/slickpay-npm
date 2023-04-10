@@ -1,0 +1,25 @@
+{
+  "name": "@slick-pay-algeria/slickpay-npm",
+  "version": "1.0.0",
+  "description": "Node.js module for Slick-Pay API implementation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Slick-Pay-Algeria/slickpay-npm.git"
+  },
+  "keywords": [
+    "slick-pay"
+  ],
+  "author": "Slick-Pay-Algeria <contact@slick-pay.com> (http://slick-pay.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Slick-Pay-Algeria/slickpay-npm/issues"
+  },
+  "homepage": "https://github.com/Slick-Pay-Algeria/slickpay-npm#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
