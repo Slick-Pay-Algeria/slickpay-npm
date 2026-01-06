@@ -22,17 +22,20 @@ export default class Transfer {
             const core = new Core(this.publicKey, this.sandbox);
 
             await axios.post(core.url(`users/transfers`), {
-                    amount: amount
-                }, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                amount: amount
+            }, {
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
@@ -51,15 +54,18 @@ export default class Transfer {
             const core = new Core(this.publicKey, this.sandbox);
 
             await axios.post(core.url('users/transfers'), data, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
@@ -78,15 +84,18 @@ export default class Transfer {
             const core = new Core(this.publicKey, this.sandbox);
 
             await axios.get(core.url(`users/transfers/${id}`), {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
@@ -110,15 +119,18 @@ export default class Transfer {
             if (offset && page) url += `&page=${page}`;
 
             await axios.get(core.url(url), {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
@@ -138,15 +150,18 @@ export default class Transfer {
             const core = new Core(this.publicKey, this.sandbox);
 
             await axios.post(core.url(`users/transfers/${id}`), data, {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
@@ -165,15 +180,18 @@ export default class Transfer {
             const core = new Core(this.publicKey, this.sandbox);
 
             await axios.delete(core.url(`users/transfers/${id}`), {
-                    headers: {
-                        Accept: "application/json",
-                        Authorization: `Bearer ${this.publicKey}`
-                    }
-                })
+                headers: {
+                    Accept: "application/json",
+                    Authorization: `Bearer ${this.publicKey}`
+                }
+            })
                 .then((result) => {
                     resolve(core.response(result.status, result.data, result.statusText));
                 }).catch((error) => {
-                    reject(core.response(error.response.status, error.response.data, error.response.statusText));
+                    const status = error.response ? error.response.status : 500;
+                    const data = error.response ? error.response.data : null;
+                    const statusText = error.response ? error.response.statusText : error.message;
+                    reject(core.response(status, data, statusText));
                 });
 
         });
